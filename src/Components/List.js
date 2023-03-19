@@ -39,8 +39,9 @@ export const List = ({ title, tasksArray, setTasksState }) => {
     <>
       <p>{title}</p>
       <ol>
-        {tasksArray.map((task) => (
+        {tasksArray.map((task, index) => (
           <ListItem
+            key={index}
             item={task}
             handleClick={handleClick}
             handleDelete={handleDelete}

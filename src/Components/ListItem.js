@@ -20,9 +20,9 @@ export const ListItem = ({ handleClick, handleDelete, item }) => {
         {item.completed ? (
           <button onClick={() => handleClick(item)}>Undo</button>
         ) : (
-          <button onClick={() => handleClick(item)}>item done</button>
+          <button onClick={() => handleClick(item)}>Done</button>
         )}
-        <button onClick={() => handleDelete(item)}>Delete item</button>
+        <button onClick={() => handleDelete(item)}>Delete</button>
         <button onClick={handleOpen}>Read more</button>
       </div>
       {openDesc && (
