@@ -1,24 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
+import axios from "axios";
 
-export const List = () => {
-  const [tasks, setTasks] = useState([]);
-  const handleForm = (e) => {
-    if (e.key === 'Enter') {
-        setTasks([...tasks, e.target.value]);
-        e.target.value = ''
-    }
-    }
-    
+import { ListItem } from "./ListItem";
+
+const API_URL = "http://localhost:3000/tasks";
+
+export const List = ({ title, tasksArray, setTasksState }) => {
+  const handleClick = (task) => {
+    const taskFound = tasksArray.find((element) => element.id === task.id);
+    taskFound.completed = !taskFound.completed;
+    axios
+      .put(`${API_URL}/${taskFound.id}`, taskFound)
+      .then(() => {
+        setTasksState([...tasksArray]);
+      })
+      .catch((err) => {
+        alert("Error connection");
+        console.log(err);
+      });
+  };
+
+  const handleDelete = (task) => {
+    axios
+      .delete(`${API_URL}/${task.id}`)
+      .then(() => {
+        const tasksFiltered = tasksArray.filter(
+          (element) => element.id !== task.id
+        );
+        setTasksState(tasksFiltered);
+      })
+      .catch((err) => {
+        alert("Error connection");
+        console.log(err);
+      });
+  };
+
   return (
     <>
-     <p>Enter your pending task:</p> 
-      <input type="text" onKeyDown={handleForm} />
+      <p>{title}</p>
       <ol>
-        {tasks.map((task) => (
-          <li>{task}</li>
+        {tasksArray.map((task) => (
+          <ListItem
+            item={task}
+            handleClick={handleClick}
+            handleDelete={handleDelete}
+          />
         ))}
       </ol>
-      
     </>
   );
 };
