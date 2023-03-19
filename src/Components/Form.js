@@ -1,5 +1,10 @@
 export const Form = () => {
-    return (
-        <h1>Form</h1>
-    )
-}
+  return (
+    <form>
+      <label>
+        Enter your pending task:
+        <input type="text" />
+      </label>
+    </form>
+  );
+};
