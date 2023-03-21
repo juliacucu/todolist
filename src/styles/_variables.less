@@ -1,15 +1,15 @@
 /* Typography */
-@Typography_Roboto:     'Roboto', serif;
-@Typography_Heebo:      'Heebo', serif;
-@Typography_Montserrat: 'Montserrat', serif;
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
 
-
+@Typography_AbrilFF:    'Abril Fatface';
+@Typography_Montserrat: 'Montserrat', sans-serif;
 
 /* Font weigth */
 @Thin_100:  100;
 @Light_300: 300;
 @Bold_700:  700;
-@Black_900: 900;
+@Bold_900: 900;
 
 /* Colors */
 @ultradark-grey:  #3B3638;
@@ -22,14 +22,9 @@
 @pink:            #FFDFEC;
 @ultralight-pink: #FFF4F1;
 @pastel-green:    #BDD4D3;
+@pastel-blue:     #96A6EB;
 
 // Breakpoints
-// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
-@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
-~"only screen and (min--moz-device-pixel-ratio: 1.5)",
-~"only screen and (-o-min-device-pixel-ratio: 3/2)",
-~"only screen and (min-device-pixel-ratio: 1.5)";
-@smallMobile:      ~"only screen and (max-width: 479px)";
 @mobile:      ~"only screen and (max-width: 548px)";
 @tablet:      ~"only screen and (min-width: 549px) and (max-width: 948px)";
 @desktop:     ~"only screen and (min-width: 949px)";

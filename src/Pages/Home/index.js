@@ -4,13 +4,11 @@ import axios from "axios";
 import { List } from "../../components/List";
 import { Link } from "react-router-dom";
 
-import "../../styles/home.css";
+import "../../styles/styles.css";
 
 const API_URL = "http://localhost:3000/tasks";
 
 export const Home = () => {
-  const titleList = "This is your task list:";
-
   const [loading, setLoading] = useState(true);
   const [tasksState, setTasksState] = useState([]);
 
@@ -27,14 +25,13 @@ export const Home = () => {
         <p>Loading...</p>
       ) : (
         <List
-          title={titleList}
           tasksArray={tasksState}
           setTasksState={setTasksState}
         />
       )}
 
-      <Link to="/create">
-        <button className="create-task">+</button>
+      <Link className="create-task" to="/create">
+        <button>NEW TASK</button>
       </Link>
     </>
   );

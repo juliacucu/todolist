@@ -5,7 +5,7 @@ import { ListItem } from "./ListItem";
 
 const API_URL = "http://localhost:3000/tasks";
 
-export const List = ({ title, tasksArray, setTasksState }) => {
+export const List = ({ tasksArray, setTasksState }) => {
   const handleClick = (task) => {
     const taskFound = tasksArray.find((element) => element.id === task.id);
     taskFound.completed = !taskFound.completed;
@@ -37,8 +37,7 @@ export const List = ({ title, tasksArray, setTasksState }) => {
 
   return (
     <>
-      <p>{title}</p>
-      <ol>
+      <ol className="task-list">
         {tasksArray.map((task, index) => (
           <ListItem
             key={index}
