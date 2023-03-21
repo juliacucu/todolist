@@ -1,0 +1,149 @@
+@import "_variables.less";
+
+body {
+  background: url("../assets/mobile-background.png") no-repeat center center
+    fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.title {
+  font-family: @Typography_AbrilFF;
+  letter-spacing: 2px;
+  text-align: center;
+  color: @ultradark-grey;
+  margin-top: 100px;
+}
+
+.task-list {
+  padding: 0;
+  margin-bottom: 0;
+
+  .task {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      background-color: @pink;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 25px;
+      color: @dark-grey;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > .task-done {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.create-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: @dark-pink;
+  border-radius: 25px;
+  text-decoration-line: none;
+  margin: 0 10px 10px 10px;
+  padding: 15px;
+  font-weight: bold;
+  > button {
+    background-color: @dark-pink;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: @ultralight-pink;
+    font-weight: @Bold_900;
+    font-family: @Typography_Montserrat;
+    letter-spacing: 1px;
+  }
+}
+
+.task-buttons {
+  .button {
+    &-undo,
+    &-done,
+    &-delete {
+      border: 0;
+      padding: 5px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      color: @ultralight-pink;
+    }
+
+    &-undo {
+      background-color: @pastel-blue;
+      margin: 0 10px;
+    }
+
+    &-done {
+      background-color: @pastel-green;
+      margin: 0 10px;
+    }
+
+    &-delete {
+      background-color: @ultradark-pink;
+    }
+  }
+}
+
+.form-box {
+    border: 2px solid @dark-pink;
+    background-color: @pink;
+    width: 320px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 10px;
+
+    &-input{
+        border: none;
+        border-radius: 10px;
+        background-color: @ultralight-pink;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 5px 0;
+    }
+
+    &-button {
+        &-close{
+            border: 1px solid @ultralight-pink;
+            background-color: @ultralight-pink;
+            border-radius: 50%;
+            color: @gray_light;
+            display: flex;
+        }
+
+        &-submit{
+            border-radius: 10px;
+            border: none;
+            background-color: @pastel-green;
+            color: @ultralight-pink;
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+    }
+}
+
+@media @tablet {
+  body {
+    max-width: 600px;
+    margin: auto;
+  }
+}
+
+@media @desktop {
+  body {
+    background-image: url("../assets/desktop-background.png");
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

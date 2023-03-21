@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 import axios from "axios";
 
 const API_URL = "http://localhost:3000/tasks";
@@ -31,25 +32,33 @@ export const Form = () => {
   };
 
   return (
-    <>
+    <div className="form-box">
+      <Link to="/">
+        <button className="form-box-button-close"><FaTimes /></button>
+      </Link>
       <form onSubmit={handleForm}>
-        <label>
-          Enter your pending task:
-          <input
-            type="text"
-            value={titleTask}
-            onChange={(e) => setTitleTask(e.target.value)}
-            placeholder="Títol de la tasca"
-          />
-          <input
-            type="text"
-            value={descTask}
-            onChange={(e) => setDescTask(e.target.value)}
-            placeholder="Descripció de la tasca"
-          />
-          <input type="submit" />
-        </label>
+        {/* <div className="form-box-labels"> */}
+          <label>
+            <input
+              className="form-box-input"
+              type="text"
+              value={titleTask}
+              onChange={(e) => setTitleTask(e.target.value)}
+              placeholder="Title"
+            />
+          </label>    
+          <label>
+            <input
+              className="form-box-input"
+              type="text"
+              value={descTask}
+              onChange={(e) => setDescTask(e.target.value)}
+              placeholder="Description"
+            />
+          </label>   
+        {/* </div> */}
+            <input className="form-box-button-submit" type="submit" />
       </form>
-    </>
+    </div>
   );
 };
