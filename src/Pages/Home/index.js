@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { List } from "../../Components/List";
+import { List } from "../../components/List";
 import { Link } from "react-router-dom";
+
+import "../../styles/home.css";
 
 const API_URL = "http://localhost:3000/tasks";
 
@@ -21,8 +23,6 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
-      <p>This is a to do app.</p>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -34,7 +34,7 @@ export const Home = () => {
       )}
 
       <Link to="/create">
-        <button>+</button>
+        <button className="create-task">+</button>
       </Link>
     </>
   );
