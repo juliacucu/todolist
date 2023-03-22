@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <h1 className="title">Productive To-Do list</h1>
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/create' element={<CreateTask />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreateTask />} />
       </Routes>
     </div>
   );

@@ -24,10 +24,7 @@ export const Home = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <List
-          tasksArray={tasksState}
-          setTasksState={setTasksState}
-        />
+        <List tasksArray={tasksState} setTasksState={setTasksState} />
       )}
 
       <Link className="create-task" to="/create">

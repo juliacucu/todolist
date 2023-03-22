@@ -9,32 +9,32 @@ body {
 }
 
 .title {
+  color: @ultradark-grey;
   font-family: @Typography_AbrilFF;
   letter-spacing: 2px;
-  text-align: center;
-  color: @ultradark-grey;
   margin-top: 100px;
+  text-align: center;
 }
 
 .task-list {
-  padding: 0;
   margin-bottom: 0;
+  padding: 0;
 
   .task {
     &-item {
-      display: flex;
-      flex-direction: column;
       background-color: @pink;
-      padding: 0.8rem;
-      margin: 1rem;
       border-radius: 3rem;
       color: @dark-grey;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+      padding: 0.8rem;
     }
 
     &-content {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       > strong:hover {
         cursor: pointer;
@@ -49,20 +49,20 @@ body {
 }
 
 .create-task {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: @dark-pink;
   border-radius: 3.5rem;
-  text-decoration-line: none;
-  margin: 0 1rem 1rem 1rem;
-  padding: 1rem;
-  font-weight: bold;
   color: @ultralight-pink;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
   font-weight: @Bold_900;
   font-family: @Typography_Montserrat;
   letter-spacing: 0.1rem;
-  cursor: pointer;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  text-decoration-line: none;
 
   :hover {
     background-color: @pink;
@@ -75,12 +75,12 @@ body {
     &-done,
     &-delete {
       border: 0;
-      padding: 0.5rem;
       border-radius: 50%;
-      width: 3rem;
-      height: 3rem;
       color: @ultralight-pink;
       cursor: pointer;
+      height: 3rem;
+      padding: 0.5rem;
+      width: 3rem;
     }
 
     &-undo {
@@ -100,48 +100,48 @@ body {
 }
 
 .form-box {
-  border: 0.2rem solid @dark-pink;
   background-color: @pink;
-  width: 20rem;
+  border: 0.2rem solid @dark-pink;
   border-radius: 1rem;
   margin: 0 auto;
   padding: 1rem;
+  width: 20rem;
 
   &-input {
+    background-color: @ultralight-pink;
     border: none;
     border-radius: 2rem;
-    background-color: @ultralight-pink;
     display: block;
-    width: 96%;
+    font-size: 1.5rem;
     margin: 1rem 0;
     padding: 0.6rem;
-    font-size: 1.5rem;
+    width: 96%;
   }
 
   &-button {
     &-close {
-      width: 40px;
-      height: 40px;
-      border: 0.1rem solid @ultralight-pink;
       background-color: @ultralight-pink;
+      border: 0.1rem solid @ultralight-pink;
       border-radius: 50%;
       color: @gray_light;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
     }
 
     &-submit {
-      border-radius: 4rem;
-      border: none;
       background-color: @pastel-green;
+      border: none;
+      border-radius: 4rem;
       color: @ultralight-pink;
-      width: 100%;
+      cursor: pointer;
+      font-size: 1.5rem;
       margin: 1rem 0;
       padding: 0.5rem 0;
-      font-size: 1.5rem;
-      cursor: pointer;
+      width: 100%;
     }
   }
 }
@@ -149,13 +149,13 @@ body {
 //TABLET
 @media @tablet {
   body {
-    max-width: 60rem;
     margin: auto;
+    max-width: 60rem;
   }
 
   .form-box {
-    width: 40rem;
     margin: 0 auto;
+    width: 40rem;
   }
 }
 
@@ -163,22 +163,22 @@ body {
 @media @desktop {
   body {
     background-image: url("../assets/desktop-background.png");
-    max-width: 80rem;
     margin: 0 auto;
+    max-width: 80rem;
   }
   .form-box {
-    width: 80rem;
     margin: 0 auto;
+    width: 80rem;
 
     &-input {
+      background-color: @ultralight-pink;
       border: none;
       border-radius: 1.5rem;
-      background-color: @ultralight-pink;
       display: block;
-      width: 99%;
+      font-size: 2rem;
       margin: 1rem 0;
       padding: 0.6rem;
-      font-size: 2rem;
+      width: 99%;
     }
 
     &-submit {
