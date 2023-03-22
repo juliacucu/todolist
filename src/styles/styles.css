@@ -43,15 +43,19 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #FFDFEC;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 25px;
+  padding: 0.8rem;
+  margin: 1rem;
+  border-radius: 3rem;
   color: #606060;
 }
 .task-list .task-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.task-list .task-content > strong:hover {
+  cursor: pointer;
+  color: #282828;
 }
 .task-list .task-content > .task-done {
   text-decoration: line-through;
@@ -61,86 +65,114 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #DF84A9;
-  border-radius: 25px;
+  border-radius: 3.5rem;
   text-decoration-line: none;
-  margin: 0 10px 10px 10px;
-  padding: 15px;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
   font-weight: bold;
-}
-.create-task > button {
-  background-color: #DF84A9;
-  border: 0;
-  padding: 0;
-  margin: 0;
   color: #FFF4F1;
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.create-task :hover {
+  background-color: #FFDFEC;
 }
 .task-buttons .button-undo,
 .task-buttons .button-done,
 .task-buttons .button-delete {
   border: 0;
-  padding: 5px;
+  padding: 0.5rem;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   color: #FFF4F1;
+  cursor: pointer;
 }
 .task-buttons .button-undo {
   background-color: #96A6EB;
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 .task-buttons .button-done {
   background-color: #BDD4D3;
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 .task-buttons .button-delete {
   background-color: #C82261;
 }
 .form-box {
-  border: 2px solid #DF84A9;
+  border: 0.2rem solid #DF84A9;
   background-color: #FFDFEC;
-  width: 320px;
-  border-radius: 10px;
+  width: 20rem;
+  border-radius: 1rem;
   margin: 0 auto;
-  padding: 10px;
+  padding: 1rem;
 }
 .form-box-input {
   border: none;
-  border-radius: 10px;
+  border-radius: 2rem;
   background-color: #FFF4F1;
   display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 5px 0;
+  width: 96%;
+  margin: 1rem 0;
+  padding: 0.6rem;
+  font-size: 1.5rem;
 }
 .form-box-button-close {
-  border: 1px solid #FFF4F1;
+  width: 40px;
+  height: 40px;
+  border: 0.1rem solid #FFF4F1;
   background-color: #FFF4F1;
   border-radius: 50%;
   color: #a0a0a0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .form-box-button-submit {
-  border-radius: 10px;
+  border-radius: 4rem;
   border: none;
   background-color: #BDD4D3;
   color: #FFF4F1;
   width: 100%;
-  margin: 10px 0;
-  padding: 5px 0;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 @media only screen and (min-width: 549px) and (max-width: 948px) {
   body {
-    max-width: 600px;
+    max-width: 60rem;
     margin: auto;
+  }
+  .form-box {
+    width: 40rem;
+    margin: 0 auto;
   }
 }
 @media only screen and (min-width: 949px) {
   body {
     background-image: url("../assets/desktop-background.png");
-    max-width: 800px;
+    max-width: 80rem;
     margin: 0 auto;
+  }
+  .form-box {
+    width: 80rem;
+    margin: 0 auto;
+  }
+  .form-box-input {
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #FFF4F1;
+    display: block;
+    width: 99%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+    font-size: 2rem;
+  }
+  .form-box-submit {
+    font-size: 2rem;
   }
 }

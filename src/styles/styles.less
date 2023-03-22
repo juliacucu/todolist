@@ -25,9 +25,9 @@ body {
       display: flex;
       flex-direction: column;
       background-color: @pink;
-      padding: 15px;
-      margin: 10px;
-      border-radius: 25px;
+      padding: 0.8rem;
+      margin: 1rem;
+      border-radius: 3rem;
       color: @dark-grey;
     }
 
@@ -35,6 +35,11 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      > strong:hover {
+        cursor: pointer;
+        color: @black;
+      }
 
       > .task-done {
         text-decoration: line-through;
@@ -48,20 +53,19 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: @dark-pink;
-  border-radius: 25px;
+  border-radius: 3.5rem;
   text-decoration-line: none;
-  margin: 0 10px 10px 10px;
-  padding: 15px;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
   font-weight: bold;
-  > button {
-    background-color: @dark-pink;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    color: @ultralight-pink;
-    font-weight: @Bold_900;
-    font-family: @Typography_Montserrat;
-    letter-spacing: 1px;
+  color: @ultralight-pink;
+  font-weight: @Bold_900;
+  font-family: @Typography_Montserrat;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+
+  :hover {
+    background-color: @pink;
   }
 }
 
@@ -71,21 +75,22 @@ body {
     &-done,
     &-delete {
       border: 0;
-      padding: 5px;
+      padding: 0.5rem;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 3rem;
+      height: 3rem;
       color: @ultralight-pink;
+      cursor: pointer;
     }
 
     &-undo {
       background-color: @pastel-blue;
-      margin: 0 10px;
+      margin: 0 1rem;
     }
 
     &-done {
       background-color: @pastel-green;
-      margin: 0 10px;
+      margin: 0 1rem;
     }
 
     &-delete {
@@ -95,55 +100,89 @@ body {
 }
 
 .form-box {
-    border: 2px solid @dark-pink;
-    background-color: @pink;
-    width: 320px;
-    border-radius: 10px;
-    margin: 0 auto;
-    padding: 10px;
+  border: 0.2rem solid @dark-pink;
+  background-color: @pink;
+  width: 20rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
 
-    &-input{
-        border: none;
-        border-radius: 10px;
-        background-color: @ultralight-pink;
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        padding: 5px 0;
+  &-input {
+    border: none;
+    border-radius: 2rem;
+    background-color: @ultralight-pink;
+    display: block;
+    width: 96%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+  }
+
+  &-button {
+    &-close {
+      width: 40px;
+      height: 40px;
+      border: 0.1rem solid @ultralight-pink;
+      background-color: @ultralight-pink;
+      border-radius: 50%;
+      color: @gray_light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
 
-    &-button {
-        &-close{
-            border: 1px solid @ultralight-pink;
-            background-color: @ultralight-pink;
-            border-radius: 50%;
-            color: @gray_light;
-            display: flex;
-        }
-
-        &-submit{
-            border-radius: 10px;
-            border: none;
-            background-color: @pastel-green;
-            color: @ultralight-pink;
-            width: 100%;
-            margin: 10px 0;
-            padding: 5px 0;
-        }
+    &-submit {
+      border-radius: 4rem;
+      border: none;
+      background-color: @pastel-green;
+      color: @ultralight-pink;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0.5rem 0;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
-}
-
-@media @tablet {
-  body {
-    max-width: 600px;
-    margin: auto;
   }
 }
 
+//TABLET
+@media @tablet {
+  body {
+    max-width: 60rem;
+    margin: auto;
+  }
+
+  .form-box {
+    width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+//DESKTOP
 @media @desktop {
   body {
     background-image: url("../assets/desktop-background.png");
-    max-width: 800px;
+    max-width: 80rem;
     margin: 0 auto;
+  }
+  .form-box {
+    width: 80rem;
+    margin: 0 auto;
+
+    &-input {
+      border: none;
+      border-radius: 1.5rem;
+      background-color: @ultralight-pink;
+      display: block;
+      width: 99%;
+      margin: 1rem 0;
+      padding: 0.6rem;
+      font-size: 2rem;
+    }
+
+    &-submit {
+      font-size: 2rem;
+    }
   }
 }
