@@ -1,9 +1,9 @@
 import React from "react";
-import axios from "axios";
-
 import { ListItem } from "./ListItem";
 
-const API_URL = "http://localhost:3000/tasks";
+import axios from "axios";
+
+const API_URL = `${process.env.REACT_APP_TASKS_SERVER}/tasks`;
 
 export const List = ({ tasksArray, setTasksState }) => {
   const handleClick = (task) => {
